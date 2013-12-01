@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= image_tag @photo.pic.url(:medium)%>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @photo.title %>
+</p>
+
+<p>
+  <strong>Photographer:</strong>
+  <%= @photo.photographer %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @photo.price %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
