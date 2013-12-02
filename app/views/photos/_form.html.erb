@@ -1,34 +1,28 @@
-<%= form_for @photo, :url => photos_path, :html => { :multipart => true } do |f| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+<%= form_for @photo, :url => photos_path,:html => {  :multipart => true, :class => 'form-horizontal' } do |f| %>
+    <%= f.file_field :pic %>
 
-      <ul>
-      <% @photo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
     </div>
-  <% end %>
-
-
-    <div class="field">
-        <%= f.label :pic %><br>
-        <%= f.file_field :pic%>
+  </div>
+  <div class="control-group">
+    <%= f.label :photographer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :photographer, :class => 'text_field' %>
     </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :photographer %><br>
-    <%= f.text_field :photographer %>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                photos_path, :class => 'btn' %>
   </div>
 <% end %>

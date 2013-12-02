@@ -1,6 +1,5 @@
-<h1>Editing photo</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @photo %> |
-<%= link_to 'Back', photos_path %>
+<%- model_class = Photo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>
