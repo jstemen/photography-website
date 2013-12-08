@@ -8,27 +8,16 @@
 </head>
 <body>
 
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#">Some Store</a>
+<%= nav_bar :fixed => :top, :responsive => true, :brand => "Palak Shah Photography" do %>
+    <%= menu_group :pull => :right do %>
+        <%= menu_item "Browse Photos", photos_path %>
+        <%= menu_item "About Us" , "static_pages/about_us"%>
+        <%= menu_divider %>
 
-            <div class="nav-collapse">
-                <ul class="nav">
-                    <li><%= link_to "Browse Photos", photos_path %></li>
-                    <li><%= link_to "Price List" %></li>
-                    <li><%= link_to "Contact Us" %></li>
-                    <li><%= link_to "Cart" %></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+        <%= render "layouts/search_form" %>
+    <% end %>
+
+<% end %>
 
 <div class="container-fluid">
     <div class="row">
@@ -42,6 +31,7 @@
                 deserunt mollit anim id est laborum.</p>
         </div>
         <div class="span9">
+
             <%= yield %>
         </div>
     </div>
