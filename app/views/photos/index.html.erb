@@ -9,11 +9,6 @@
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:photographer) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
-      <th><%= model_class.human_attribute_name(:pic_file_name) %></th>
-      <th><%= model_class.human_attribute_name(:pic_content_type) %></th>
-      <th><%= model_class.human_attribute_name(:pic_file_size) %></th>
-      <th><%= model_class.human_attribute_name(:pic_updated_at) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -24,11 +19,6 @@
         <td><%= photo.title %></td>
         <td><%= photo.photographer %></td>
         <td><%= photo.price %></td>
-        <td><%= photo.pic_file_name %></td>
-        <td><%= photo.pic_content_type %></td>
-        <td><%= photo.pic_file_size %></td>
-        <td><%= photo.pic_updated_at %></td>
-        <td><%=l photo.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_photo_path(photo), :class => 'btn btn-mini' %>

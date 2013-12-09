@@ -10,9 +10,9 @@
 
 <%= nav_bar :fixed => :top, :responsive => true, :brand => "Palak Shah Photography" do %>
     <%= menu_group :pull => :right do %>
-        <%= menu_item "Home" , "/static_pages/home"%>
+        <%= menu_item "Home" , static_pages_about_us_path%>
         <%= menu_item "Browse Photos", photos_path %>
-        <%= menu_item "About Us" , "/static_pages/about_us"%>
+        <%= menu_item "About Us" , static_pages_home_path%>
         <%= menu_divider %>
 
         <%= render "layouts/search_form" %>
