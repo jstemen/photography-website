@@ -1,1 +1,42 @@
-<%= image_tag("hotAir.jpg", :alt => "Hot air ballon") %>
+<p class="span9 offset1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque sollicitudin orci id consequat. Donec
+    eleifend ornare fringilla. Fusce vitae ante mollis, accumsan quam sit amet, rhoncus mauris. Ut neque ipsum,
+    vestibulum in eleifend eget, pulvinar vitae magna. Vestibulum purus ligula, porta et orci et, mattis scelerisque
+    ligula. Nunc in interdum dolor. Quisque ornare aliquet ullamcorper. Vivamus non porta nunc, eget ullamcorper libero.
+    Donec placerat tempor accumsan. Pellentesque dictum sem vitae leo vehicula, in convallis sapien feugiat. Vivamus vel
+    faucibus nulla. Ut malesuada, urna vel tristique rutrum, felis lectus bibendum lacus, non porta elit metus eu enim.
+    Integer in pulvinar metus. Nullam non tincidunt nisi, vel malesuada arcu. Praesent tristique at nunc non
+    euismod.</p>
+
+<div id="carousel-example-generic" class="carousel slide span6 offset3" data-ride="carousel">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner front_carousel">
+        <% carouselDir = Rails.root.join('public', 'images', 'carousel').to_s
+           fileArray = Dir.entries(carouselDir)
+           fileArray.each_with_index do |item, index|
+             next if item == '.' or item == '..'
+             divClass = index == 2 ? "item active" : "item"
+             imgP = '/images/carousel/'+ item %>
+            <div class=<%= divClass %>>
+                <%= image_tag(imgP) %>
+            </div>
+        <% end %>
+
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+
+<script>
+    $(window).load(function () {
+        $('.carousel').carousel()
+    });
+    $('.carousel').carousel('next');
+</script>

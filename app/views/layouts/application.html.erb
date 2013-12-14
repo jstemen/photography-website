@@ -5,14 +5,15 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <link rel="shortcut icon" href="http://31.media.tumblr.com/avatar_2e0b22f500a2_128.png">
 </head>
 <body>
 
 <%= nav_bar :fixed => :top, :responsive => true, :brand => "Palak Shah Photography" do %>
     <%= menu_group :pull => :right do %>
-        <%= menu_item "Home" , static_pages_about_us_path%>
+        <%= menu_item "Home" ,  static_pages_home_path%>
         <%= menu_item "Browse Photos", photos_path %>
-        <%= menu_item "About Us" , static_pages_home_path%>
+        <%= menu_item "About Us" ,static_pages_about_us_path%>
         <%= menu_divider %>
 
         <%= render "layouts/search_form" %>
@@ -23,7 +24,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <div class="span9">
+        <div class="span12">
 
             <%= yield %>
         </div>
