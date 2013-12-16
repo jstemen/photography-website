@@ -1,8 +1,14 @@
 PalaksPhotoWebsite::Application.routes.draw do
+
+  devise_for :admins
+  devise_for :users
   get "static_pages/home"
   get "static_pages/about_us"
   resources :photos
+
+  resources :users
   root 'static_pages#home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

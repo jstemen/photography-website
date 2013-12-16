@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PalaksPhotoWebsite</title>
+    <title>Palak Shah Photography</title>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -11,12 +11,28 @@
 
 <%= nav_bar :fixed => :top, :responsive => true, :brand => "Palak Shah Photography" do %>
     <%= menu_group :pull => :right do %>
-        <%= menu_item "Home" ,  static_pages_home_path%>
+        <%= menu_item "Home", static_pages_home_path %>
         <%= menu_item "Browse Photos", photos_path %>
-        <%= menu_item "About Us" ,static_pages_about_us_path%>
+        <%= menu_item "About Us", static_pages_about_us_path %>
         <%= menu_divider %>
 
+        <% if user_signed_in? %>
+                <%= menu_item('Logout', destroy_user_session_path, :method => :delete) %>
+        <% else %>
+                <%= menu_item('Login', new_user_session_path)  %>
+        <% end %>
+
+        <% if user_signed_in? %>
+                <%= menu_item('Edit registration', edit_user_registration_path) %>
+        <% else %>
+                <%= menu_item('Register', new_user_registration_path)  %>
+        <% end %>
+
+
         <%= render "layouts/search_form" %>
+
+
+
     <% end %>
 
 <% end %>
@@ -25,6 +41,12 @@
     <div class="row">
 
         <div class="span12">
+            <% if !notice.nil? %>
+                <p class="notice"><%= notice %></p>
+            <% end %>
+            <% if !alert.nil? %>
+            <p class="alert"><%= alert %></p>
+            <% end %>
 
             <%= yield %>
         </div>
