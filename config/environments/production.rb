@@ -80,4 +80,14 @@ PalaksPhotoWebsite::Application.configure do
 
   #for devise
   config.action_mailer.default_url_options = { :host => 'palak-shah-photography.herokuapp.com' }
+
+   #s3 bucket
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['palakShahPhotography'],
+          :access_key_id => ENV['AKIAI3I44VKJBYOKKPTQ'],
+          :secret_access_key => ENV['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']
+      }
+  }
 end
