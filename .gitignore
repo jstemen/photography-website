@@ -14,3 +14,13 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+
+app_environment_variables.rb
+
+#intellij files
+*.iml
+/.idea
+
+#paperclip files
+/public/system/photos/pics/*

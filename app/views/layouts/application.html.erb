@@ -16,18 +16,21 @@
         <%= menu_item "About Us", static_pages_about_us_path %>
         <%= menu_divider %>
 
-        <% if user_signed_in? %>
-                <%= menu_item('Logout', destroy_user_session_path, :method => :delete) %>
+        <% if admin_signed_in? %>
+            <%= menu_item('Logout', destroy_admin_session_path, :method => :delete) %>
         <% else %>
-                <%= menu_item('Login', new_user_session_path)  %>
-        <% end %>
+            <% if user_signed_in? %>
+                    <%= menu_item('Logout', destroy_user_session_path, :method => :delete) %>
+            <% else %>
+                    <%= menu_item('Login', new_user_session_path)  %>
+            <% end %>
 
-        <% if user_signed_in? %>
-                <%= menu_item('Edit registration', edit_user_registration_path) %>
-        <% else %>
-                <%= menu_item('Register', new_user_registration_path)  %>
+            <% if user_signed_in? %>
+                    <%= menu_item('Edit registration', edit_user_registration_path) %>
+            <% else %>
+                    <%= menu_item('Register', new_user_registration_path)  %>
+            <% end %>
         <% end %>
-
 
         <%= render "layouts/search_form" %>
 

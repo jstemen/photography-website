@@ -17,7 +17,7 @@
 development:
   adapter: sqlite3
   encoding: unicode
-  database: palaksPhotoWebsite_development
+  database: db/palaksPhotoWebsite_development.sqlite3
   pool: 5
   username: postgres
   password:
