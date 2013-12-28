@@ -37,6 +37,8 @@
     </tbody>
 </table>
 
+<% if admin_signed_in? %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_photo_path,
             :class => 'btn btn-primary' %>
+<%end%>
