@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #Admin.create(email: 'jstemen@gmail.com', password: 'hello')
 
-Admin.create(email: 'jared.stemen@gmail.com', password: 'jared.stemen@gmail.com')
+Admin.create(email: 'Palak.Shah1@gmail.com', encrypted_password: '$2a$10$4LKjtfVCMHzEIt2YixP1ceTse0GUK0zFI3GxuVnQS.CeW6e7IPsym')
 
 
