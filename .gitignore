@@ -15,7 +15,7 @@
 /log/*.log
 /tmp
 
-
+#s3 credentials
 app_environment_variables.rb
 
 #intellij files
